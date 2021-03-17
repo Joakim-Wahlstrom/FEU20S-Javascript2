@@ -22,19 +22,24 @@ const server = http.createServer((req, res) => {
     switch(req.url) {
       case '/':
         url = 'index.html';
+        res.statusCode = 200;
         break;
       case '/about':
         url = 'about.html';
+        res.statusCode = 200;
+        break;
+      case '/about-us':
+        res.statusCode = 301;
+        res.setHeader('Location', '/about');
+        res.end();
         break;
       default:
         url = '404.html';
+        res.statusCode = 404;
     }
 
 
-
-
     let filePath = path.join(__dirname, 'views', url)
-
 
     fs.readFile(filePath, (err, data) => {
       if(err) {
@@ -44,7 +49,6 @@ const server = http.createServer((req, res) => {
       res.end(data);
     })
 })
-
 
 
 const PORT = process.env.PORT || 9999;
