@@ -13,3 +13,22 @@ const PORT = process.env.PORT || 4000;
 server.listen(PORT, () => {
   console.log('server running on http://localhost:' + PORT);
 })
+
+
+const io = socket(server);
+
+io.on('connection', socket => {
+  console.log('New user connected', socket.id);
+
+
+  // socket.emit('message', 'Welcome to the chat!');
+
+
+  socket.on('message', data => {
+    // console.log(data);
+    io.sockets.emit('message', data);
+  })
+
+
+
+})
