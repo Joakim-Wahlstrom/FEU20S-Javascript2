@@ -22,13 +22,20 @@ io.on('connection', socket => {
 
 
   // socket.emit('message', 'Welcome to the chat!');
-
+  socket.broadcast.emit('user', 'A user has joined the chat');
+  socket.on('disconnect', () => {
+    io.emit('user', 'A user has left the chat');
+  })
 
   socket.on('message', data => {
     // console.log(data);
     io.sockets.emit('message', data);
   })
 
+  // Broadcast skickar till anna andra sockets förutom sin egna.
+  socket.on('typing', data => {
+    socket.broadcast.emit('typing', data);
+  })
 
 
 })

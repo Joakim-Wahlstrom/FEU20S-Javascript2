@@ -52,3 +52,7 @@ nav {
 .right {
   margin-left: auto;
 }
+#feedback {
+  color: #6d6d6d;
+  margin-left: 1rem;
+}
