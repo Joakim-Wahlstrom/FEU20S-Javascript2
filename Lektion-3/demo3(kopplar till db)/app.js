@@ -5,7 +5,8 @@ const app = express();
 const todosController = require('./controllers/todosController');
 
 // MIDDLEWARE
-
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // CONTROLLERS
 app.use('/api/todos', todosController);
