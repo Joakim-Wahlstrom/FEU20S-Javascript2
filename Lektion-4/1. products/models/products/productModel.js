@@ -30,8 +30,7 @@ exports.createProduct = (req, res) => {
         })
       }
 
-      
-
+    
       const product = new Product({
         name: req.body.name,
         short: req.body.short,
@@ -56,6 +55,71 @@ exports.createProduct = (req, res) => {
           })
         })
 
+    })
+
+}
+
+
+exports.updateProduct = (req, res) => {
+
+  // Product.updateOne({ _id: req.params.id }, req.body)
+  //   .then(() => {
+  //     Product.updateOne({ _id: req.params.id }, { $set: { modified: Date.now()}})
+  //       .then(() => {
+  //         res.status(200).json({
+  //           statusCode: 200,
+  //           status: true,
+  //           message: 'Product updated successfully'
+  //         })
+  //       })
+  //   })
+  //   .catch(() => {
+  //     res.status(500).json({
+  //       statusCode: 500,
+  //       status: false,
+  //       message: 'Failed to update product'
+  //     })
+  //   })
+
+
+
+  Product.updateOne({ _id: req.params.id }, {
+    ...req.body,
+    modified: Date.now()
+  })
+  .then(() => {
+    res.status(200).json({
+      statusCode: 200,
+      status: true,
+      message: 'Product updated successfully'
+    })
+  })
+  .catch(() => {
+    res.status(500).json({
+      statusCode: 500,
+      status: false,
+      message: 'Failed to update product'
+    })
+  })
+}
+
+
+exports.deleteProduct = (req, res) => {
+
+  Product.deleteOne({ _id: req.params.id })
+    .then(() => {
+      res.status(200).json({
+        statusCode: 200,
+        status: true,
+        messge: 'Product deleted'
+      })
+    })
+    .catch(() => {
+      res.status(500).json({
+        statusCode: 500,
+        status: false,
+        message: 'Failed to delete product'
+      })
     })
 
 }

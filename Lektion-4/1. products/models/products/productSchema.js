@@ -8,8 +8,8 @@ const productSchema = mongodb.Schema({
   price: { type: Number, required: true },
   image: { type: String, required: true },
 
-  created: { type: Date, dafault: Date.now },
-  modified: { type: Date, dafault: Date.now }
+  created: { type: Date, default: Date.now },
+  modified: { type: Date, default: Date.now }
 
 })
 
