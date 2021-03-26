@@ -59,7 +59,6 @@ const deleteTodo = async todo => {
   } else {
     alert('du måste klarmarkera todon först!');
   }
-
 }
 
 const updateTodo = (todo) => {
