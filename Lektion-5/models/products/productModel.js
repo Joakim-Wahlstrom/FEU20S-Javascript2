@@ -165,9 +165,50 @@ exports.updateProduct = (req, res) => {
       res.status(404).json({
         statusCode: 404,
         status: false,
-        message: err || 'Oops, this products does not exist'
+        message: err || 'Oops, this product does not exist'
+      })
+    }
+  })
+}
+
+exports.deleteProduct = (req, res) => {
+
+  Product.exists({ _id: req.params.id }, (err, result) => {
+    if(err) {
+      return res.status(400).json({
+        statusCode: 400,
+        status: false,
+        message: 'You made a bad request'
+      })
+    }
+
+    if(result) {
+
+      Product.deleteOne({ _id: req.params.id })
+        .then(() => {
+          res.status(200).json({
+            statusCode: 200,
+            status: true,
+            message: 'Product deleted'
+          })
+        })
+        .catch(err => {
+          res.status(500).json({
+            statusCode: 500,
+            status: false,
+            message: 'Failed to delete product',
+            err
+          })
+        })
+
+    } else {
+      res.status(404).json({
+        statusCode: 404,
+        status: false,
+        message: err || 'Oops, this product does not exist'
       })
     }
 
   })
+
 }
