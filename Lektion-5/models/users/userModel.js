@@ -1,6 +1,7 @@
 const mongodb = require('mongoose');
 const User = require('../users/userSchema');
 const bcrypt = require('bcrypt');
+const auth = require('../../authentication/auth');
 
 exports.registerUser = (req, res) => {
 
@@ -60,4 +61,45 @@ exports.registerUser = (req, res) => {
         })
     })
   })
+}
+
+exports.loginUser = (req, res) => {
+
+  User.findOne({ email: req.body.email })
+    .then(user => {
+      if(!user) {
+        return res.status(404).json({
+          statusCode: 404,
+          status: false,
+          message: 'Incorrect email or password'
+        })
+      }
+
+      bcrypt.compare(req.body.password, user.passwordHash, (err, result) => {
+
+        if(err) {
+          return res.status(400).json({
+            statusCode: 400,
+            status: false,
+            message: 'You made a bad request',
+            err
+          })
+        }
+
+        if(result) {
+          res.status(200).json({
+            statusCode: 200,
+            status: true,
+            message: 'Authentication was successful',
+            token: auth.generateToken(user)
+          })
+        } else {
+          res.status(401).json({
+            statusCode: 401,
+            status: false,
+            message: 'Incorrect email or password'
+          })
+        }
+      })
+    })
 }
