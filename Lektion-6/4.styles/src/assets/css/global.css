@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+.mt-5 {
+  margin-top: 3rem;
+}
+nav {
+  background: chocolate;
+}
