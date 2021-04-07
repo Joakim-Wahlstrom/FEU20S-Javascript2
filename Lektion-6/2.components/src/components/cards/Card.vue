@@ -4,7 +4,7 @@
 
     <!--Card image-->
     <div class="view overlay">
-      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/16.jpg"
+      <img class="card-img-top" v-bind:src="imgUrl"
         alt="Card image cap">
       <a href="#!">
         <div class="mask rgba-white-slight"></div>
@@ -39,6 +39,11 @@ export default {
       type: String,
       required: false,
       default: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel recusandae rem, laboriosam fugiat aliquam eius.'
+    },
+    imgUrl: {
+      type: String,
+      required: false,
+      default: '...'
     }
   }
 }
