@@ -16,6 +16,7 @@
 <script>
 export default {
   props: ['name', 'age', 'email']
+  // props: ['user']
 
 }
 </script>
