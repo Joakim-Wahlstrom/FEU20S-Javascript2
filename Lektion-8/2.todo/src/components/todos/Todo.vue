@@ -4,12 +4,20 @@
       <h4 class="p-2 m-0" :class="{done: todo.completed}" @click="toggleCompleted" >{{todo.title}}</h4>
       <button class="btn btn-danger px-3" @click="deleteTodo">X</button>
     </div>
+    <Modal v-if="error" @close="error = false" />
   </div>
 </template>
 
 <script>
+import Modal from './Modal'
 export default {
   props: ['todo'],
+  components: { Modal },
+  data() {
+    return {
+      error: false
+    }
+  },
   methods: {
     toggleCompleted() {
       // console.log(this.todo.id)
@@ -33,7 +41,7 @@ export default {
       if(this.todo.completed)
         this.$emit('delete-todo', this.todo.id)
       else 
-        alert('den här är inte klar')
+        this.error = true
     }
   }
 }
@@ -47,5 +55,8 @@ export default {
   .done {
     text-decoration: line-through;
     color: #bbb;
+  }
+  .relative {
+    position: relative;
   }
 </style>

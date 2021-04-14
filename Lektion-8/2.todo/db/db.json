@@ -1,14 +1,19 @@
 {
   "todos": [
     {
-      "title": "städa kontoret",
+      "title": "städa",
       "completed": false,
-      "id": "q1wl78z"
+      "id": 1
     },
     {
-      "title": "Tvätta bilen",
+      "title": "tvätta bilen",
       "completed": false,
-      "id": "OYyy246"
+      "id": 2
+    },
+    {
+      "title": "ta rast",
+      "completed": false,
+      "id": 3
     }
   ]
 }
