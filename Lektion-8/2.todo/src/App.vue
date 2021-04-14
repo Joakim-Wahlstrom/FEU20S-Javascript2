@@ -1,9 +1,9 @@
 <template>
   <div class="bg-light">
     <Navbar />
-    <AddTodo />
+    <AddTodo @addTodo="add" />
     <div class="container">
-      <TodoList :todos="todos" />
+      <TodoList :todos="todos" @toggle="fetchTodos" @delete-todo="deleteTodo" />
     </div>
   </div>
 </template>
@@ -40,6 +40,32 @@ export default {
           // console.log(this.todos)
         })
         .catch(err => console.log(err))
+    },
+    add(title) {
+      fetch('http://localhost:3000/todos', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify({
+          title,
+          completed: false
+        })
+      })
+      .then(res => {
+        // console.log(res)
+        if(res.ok)
+          this.fetchTodos()
+      })
+    },
+    deleteTodo(id) {
+      fetch(`http://localhost:3000/todos/${id}`, {
+        method: 'DELETE'
+      })
+      .then(res => {
+        if(res.ok)
+          this.fetchTodos()
+      })
     }
   },
   created() {
