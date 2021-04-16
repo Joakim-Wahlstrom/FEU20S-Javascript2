@@ -4,7 +4,9 @@
     <button class="btn m-0 z-depth-0" :class="{'btn-primary': !createPost, 'btn-outline-primary': createPost}" @click="component = 'ViewPosts'">View</button>
     <div class="border border-primary p-3">
       <div class="container">
-        <component :is="component" />
+        <keep-alive>
+          <component :is="component" @new-post="newPost" :posts="posts" />
+        </keep-alive>
       </div>
     </div>
   </div>
@@ -25,6 +27,20 @@ export default {
       posts: [],
       component: 'CreatePost',
       createPost: true
+    }
+  },
+  methods: {
+    newPost(post) {
+      this.posts.push(post)
+      this.component = 'ViewPosts'
+    }
+  },
+  watch: {
+    component: function() {
+      if(this.component === 'CreatePost')
+        this.createPost = true
+      else
+        this.createPost = false
     }
   }
 }
