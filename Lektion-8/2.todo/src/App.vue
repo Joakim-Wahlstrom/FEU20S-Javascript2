@@ -1,9 +1,10 @@
 <template>
   <div class="bg-light">
     <Navbar />
-    <AddTodo @addTodo="add" />
+    <AddTodo @addTodo="add" @sort="sortTodos" />
     <div class="container">
-      <TodoList :todos="todos" @toggle="fetchTodos" @delete-todo="deleteTodo" />
+      <TodoList :value="sort" :todos="todos" @toggle="fetchTodos" @delete-todo="deleteTodo" />
+      <!-- <TodoList :value="sort" :todos="sortedTodos" @toggle="fetchTodos" @delete-todo="deleteTodo" /> -->
     </div>
   </div>
 </template>
@@ -28,10 +29,36 @@ export default {
       //   { id: '4', title: 'Todo Item Four', completed: false },
       //   { id: '5', title: 'Todo Item Five', completed: false }
       // ]
-      todos: []
+      todos: [],
+      sort: ''
+    }
+  },
+  computed: {
+    sortedTodos() {
+      switch(this.sort) {
+        case 'false':
+          return this.todos.filter(todo => !todo.completed)
+        case 'true':
+          return this.todos.filter(todo => todo.completed)
+        default:
+          return this.todos
+      }
     }
   },
   methods: {
+    sortTodos(val) {
+      switch(val) {
+        case 'false':
+          this.sort = false
+          break;
+        case 'true':
+          this.sort = true
+          break
+        default:
+          this.sort = ''
+      }
+      // this.sort = val
+    },
     fetchTodos() {
       fetch('http://localhost:3000/todos')
         .then(res => res.json())

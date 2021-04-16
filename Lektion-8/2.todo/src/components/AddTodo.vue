@@ -14,7 +14,7 @@
         </div>
 
         <div class="col-4">
-          <select class="form-control" v-model="select">
+          <select class="form-control" v-model="select" @change="$emit('sort', select)">
             <option value="">Show all</option>
             <option value="false">Show Uncompleted</option>
             <option value="true">Show Completed</option>

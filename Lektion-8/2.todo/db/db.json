@@ -7,13 +7,23 @@
     },
     {
       "title": "tvätta bilen",
-      "completed": false,
+      "completed": true,
       "id": 2
     },
     {
       "title": "ta rast",
-      "completed": false,
+      "completed": true,
       "id": 3
+    },
+    {
+      "title": "qw",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "title": "dsas",
+      "completed": false,
+      "id": 5
     }
   ]
 }

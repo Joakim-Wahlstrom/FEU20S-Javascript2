@@ -2,7 +2,14 @@
   <div v-if="todos.length">
     <transition-group name="fade-slide">
       <div v-for="todo in todos" :key="todo.id">
-        <Todo :todo="todo" @toggle="$emit('toggle')" @delete-todo="$emit('delete-todo', todo.id)" />
+        <!-- <Todo v-if="todo.completed === value" :todo="todo" @toggle="$emit('toggle')" @delete-todo="$emit('delete-todo', todo.id)" />
+        <Todo v-else :todo="todo" @toggle="$emit('toggle')" @delete-todo="$emit('delete-todo', todo.id)" />        -->
+        <Todo v-if="value === ''" :todo="todo" @toggle="$emit('toggle')" @delete-todo="$emit('delete-todo', todo.id)" />       
+        <Todo v-else-if="todo.completed === value" :todo="todo" @toggle="$emit('toggle')" @delete-todo="$emit('delete-todo', todo.id)" />
+
+
+
+        <!-- <Todo :todo="todo" @toggle="$emit('toggle')" @delete-todo="$emit('delete-todo', todo.id)" /> -->
       </div>
     </transition-group>
   </div>
@@ -14,7 +21,7 @@
 <script>
 import Todo from './Todo'
 export default {
-  props: ['todos'],
+  props: ['todos', 'value'],
   components: {
     Todo
   }
