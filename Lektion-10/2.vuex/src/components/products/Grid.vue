@@ -1,39 +1,26 @@
 <template>
   <div>
-    <button class="btn">ADD</button>
-    <button class="btn">SUB</button>
+    <button class="btn" @click="addToPrice(5)">ADD</button>
+    <button class="btn" @click="subAsync(5)">SUB</button>
     <div class="grid">
-      <ProductCard v-for="product in products" :key="product.id" class="card" :product="product" />
+      <!-- <ProductCard v-for="product in products" :key="product.id" class="card" :product="product" /> -->
+      <ProductCard v-for="product in filteredProducts" :key="product.id" class="card" :product="product" />
     </div>
   </div>
 </template>
 
 <script>
 import ProductCard from './ProductCard'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   components: {
     ProductCard
   },
-  data() {
-    return {
-      products: [
-        {id: 1, name: 'Product 1', price: 200},
-        {id: 2, name: 'Product 2', price: 299},
-        {id: 3, name: 'Product 3', price: 500},
-        {id: 4, name: 'Product 4', price: 100},
-        {id: 5, name: 'Product 5', price: 234},
-        {id: 6, name: 'Product 6', price: 999},
-        {id: 7, name: 'Product 7', price: 222},
-        {id: 8, name: 'Product 8', price: 200},
-        {id: 9, name: 'Product 9', price: 300},
-        {id: 10, name: 'Product 10', price: 400},
-        {id: 11, name: 'Product 11', price: 500},
-        {id: 12, name: 'Product 12', price: 600},
-        {id: 13, name: 'Product 13', price: 700},
-        {id: 14, name: 'Product 14', price: 800},
-        {id: 15, name: 'Product 15', price: 900},
-      ]
-    }
+  methods: {
+    ...mapActions(['subAsync', 'addToPrice'])
+  },
+  computed: {
+    ...mapGetters(['products', 'filteredProducts'])
   }
 }
 </script>

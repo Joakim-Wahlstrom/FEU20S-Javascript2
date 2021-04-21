@@ -1,5 +1,5 @@
 <template>
-  <router-link class="card" :to="'/product/details/' + product.id">
+  <router-link class="card" :to="'/products/details/' + product.id">
     <p>ID: {{ product.id }}</p>
     <p>NAME: {{ product.name }}</p>
     <p>PRICE: {{ product.price }}</p>

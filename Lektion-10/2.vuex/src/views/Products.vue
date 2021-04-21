@@ -8,7 +8,7 @@
       <br>
       <form>
         <div>
-          <input type="text" placeholder="Search...">
+          <input type="text" placeholder="Search..." v-model="searchVal" @keyup="search(searchVal)">
         </div>
         <br>
         <div>
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import Grid from '../components/products/Grid'
 import List from '../components/products/List'
 export default {
@@ -34,8 +35,12 @@ export default {
   },
   data() {
     return {
-      comp: 'List'
+      comp: 'List',
+      searchVal: ''
     }
+  },
+  methods: {
+    ...mapActions(['search'])
   }
 }
 </script>

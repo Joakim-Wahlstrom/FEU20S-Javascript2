@@ -3,12 +3,14 @@
     <button class="btn" @click="addToPrice">ADD</button>
     <button class="btn" @click="subPrice(5)">SUB</button>
     <div class="list">
-      <ProductCard v-for="product in prodTax" :key="product.id" class="card" :product="product" />
+      <!-- <ProductCard v-for="product in prodTax" :key="product.id" class="card" :product="product" /> -->
+      <ProductCard v-for="product in filteredProducts" :key="product.id" class="card" :product="product" />
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import ProductCard from './ProductCard'
 export default {
   components: {
@@ -61,7 +63,8 @@ export default {
       // })
       // return taxedProducts
       return this.$store.getters.taxedProducts
-    }
+    },
+    ...mapGetters(['filteredProducts'])
   }
 }
 </script>
