@@ -42,8 +42,29 @@
           </div>
 
         </div>
-      </div>
 
+        <div class="col-lg-6 text-center text-lg-start">
+          <h2>{{ meetingRoom.name }}</h2>
+          <h3>
+            <span class="text-danger">Capacity </span>
+            <span>{{ meetingRoom.capacity }}</span>
+          </h3>
+
+          <h5 class="text-primary mt-5">Description</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquam libero maxime perferendis. Hic iste saepe consectetur unde nostrum porro.</p>
+
+          <h5 class="text-primary mt-5">Equipment</h5>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item border-0" v-for="(eq, index) in meetingRoom.equipment" :key="index" >{{ eq }}</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-lg-3 ms-auto">
+          <button class="btn btn-info">Add to cart</button>
+        </div>
+      </div>
 
     </section>
   </div>
@@ -62,6 +83,11 @@ export default {
     getARoom() {
       axios.get('http://localhost:3000/meetingrooms/' + this.$route.params.id)
         .then(res => this.meetingRoom = res.data)
+        .catch(err => {
+          if(err.response.status === 404) {
+            this.$router.replace({ name: '404'})
+          }
+        })
     }
   },
   created() {
