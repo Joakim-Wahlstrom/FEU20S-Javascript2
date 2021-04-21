@@ -1,0 +1,107 @@
+{
+  "meetingrooms": [
+    {
+      "id": 1,
+      "name": "Ängsö",
+      "capacity": 60,
+      "equipment": [
+        "Projektor",
+        "Whiteboard"
+      ],
+      "images": [
+        {
+          "url": "Building1.jpg",
+          "active": true,
+          "alt": "first slide"
+        },
+        {
+          "url": "Building2.jpg",
+          "active": false,
+          "alt": "second slide"
+        },
+        {
+          "url": "Building3.jpg",
+          "active": false,
+          "alt": "third slide"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Björnö",
+      "capacity": 40,
+      "equipment": [
+        "Projektor",
+        "Whiteboard"
+      ],
+      "images": [
+        {
+          "url": "Building1.jpg",
+          "active": true,
+          "alt": "first slide"
+        },
+        {
+          "url": "Building2.jpg",
+          "active": false,
+          "alt": "second slide"
+        },
+        {
+          "url": "Building3.jpg",
+          "active": false,
+          "alt": "third slide"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Lindö",
+      "capacity": 20,
+      "equipment": [
+        "Projektor",
+        "Whiteboard"
+      ],
+      "images": [
+        {
+          "url": "Building1.jpg",
+          "active": true,
+          "alt": "first slide"
+        },
+        {
+          "url": "Building2.jpg",
+          "active": false,
+          "alt": "second slide"
+        },
+        {
+          "url": "Building3.jpg",
+          "active": false,
+          "alt": "third slide"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Dalarö",
+      "capacity": 2,
+      "equipment": [
+        "Whiteboard"
+      ],
+      "images": [
+        {
+          "url": "Building1.jpg",
+          "active": true,
+          "alt": "first slide"
+        },
+        {
+          "url": "Building2.jpg",
+          "active": false,
+          "alt": "second slide"
+        },
+        {
+          "url": "Building3.jpg",
+          "active": false,
+          "alt": "third slide"
+        }
+      ]
+    }
+  ]
+}
