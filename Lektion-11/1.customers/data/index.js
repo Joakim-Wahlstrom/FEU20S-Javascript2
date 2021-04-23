@@ -1,0 +1,8 @@
+module.exports = () => {
+  const data = { posts: [] }
+  // Create 1000 users
+  for (let i = 0; i < 100; i++) {
+    data.posts.push({ id: i, title: `Post number ${i}`, body: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate facilis, enim odio voluptatem fugit tempora itaque deleniti voluptates repellendus eveniet possimus excepturi, quis consequatur nesciunt, odit totam ullam ipsum neque sapiente. Provident rem inventore voluptas. Iure quis doloremque vel unde dolorem illo laborum dolor aliquam voluptatibus rem. Eveniet corporis minus ea iusto ducimus deserunt quo odit culpa magni sequi modi neque eum at ad expedita enim recusandae nobis, ratione deleniti suscipit maiores eos unde aliquam. Quia suscipit fuga, ab blanditiis nemo similique sequi. Iste officiis libero, quam, adipisci distinctio corporis accusantium quaerat nostrum illum blanditiis sed optio, quae ratione est voluptatem ipsum possimus animi praesentium voluptatum recusandae fuga officia et quo. Laudantium qui quo tempora, consequuntur doloribus maxime, placeat est explicabo cupiditate nihil quisquam, temporibus pariatur eveniet deleniti possimus quod ea. Ratione, commodi deleniti ab sint maiores ipsa corporis esse quis laboriosam impedit asperiores officiis. Error, temporibus tempore omnis quam dolorem nulla. Quisquam expedita minima necessitatibus recusandae obcaecati excepturi dolor itaque deleniti nobis quasi tempore voluptates aperiam, cum culpa, sapiente atque molestiae. Optio distinctio totam consequuntur cupiditate fuga nihil asperiores id. Ducimus, quaerat? Similique ipsa molestias delectus sint eius nulla maiores praesentium illum. Voluptate dolore sit facere vitae labore totam!' })
+  }
+  return data
+}
