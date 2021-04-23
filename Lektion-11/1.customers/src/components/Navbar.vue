@@ -45,6 +45,8 @@
               class="form-control"
               placeholder="Search"
               aria-label="Search"
+              v-model="searchVal"
+              @keyup="search(searchVal)"
             />
           </form>
         </div>
@@ -56,8 +58,16 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
-
+  data() {
+    return {
+      searchVal: ''
+    }
+  },
+  methods: {
+    ...mapActions(['search'])
+  }
 }
 </script>
 
