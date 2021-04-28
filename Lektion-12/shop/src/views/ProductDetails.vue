@@ -26,7 +26,7 @@
 
             <div class="d-flex justify-content-between align-items-center">
               <h3><span class="text-danger">{{ product.price }}</span> SEK</h3>
-              <button class="btn btn-primary">Add to cart</button>
+              <button class="btn btn-primary" @click="addProductToCart({ product, quantity })" >Add to cart</button>
             </div>
           </div>
 
@@ -48,8 +48,13 @@ import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'ProductDetails',
   props: ['id'],
+  data() {
+    return {
+      quantity: 1
+    }
+  },
   methods: {
-    ...mapActions(['getOneProduct', 'cleanup'])
+    ...mapActions(['getOneProduct', 'cleanup', 'addProductToCart'])
   },
   computed: {
     ...mapGetters(['product'])

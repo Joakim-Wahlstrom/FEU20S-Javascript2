@@ -43,10 +43,10 @@
               aria-expanded="false"
             >
               <i class="fas fa-shopping-cart"></i>
-              <span class="badge rounded-pill badge-notification bg-danger">1</span>
+              <span v-show="cartItemCount" class="badge rounded-pill badge-notification bg-danger">{{ cartItemCount }}</span>
             </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-              SHOPPING CART
+            <ul class="dropdown-menu dropdown-menu-end shopping-cart" aria-labelledby="navbarDropdownMenuLink">
+              <ShoppingCart />
             </ul>
           </li>
 
@@ -74,11 +74,21 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import ShoppingCart from '../shoppingCart/ShoppingCart'
 export default {
-
+  name: 'Navbar',
+  components: {
+    ShoppingCart
+  },
+  computed: {
+    ...mapGetters(['cartItemCount'])
+  }
 }
 </script>
 
 <style>
-
+.shopping-cart {
+  min-width: 450px;
+}
 </style>
