@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "HP Laptop",
+      "short": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, iste.",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ullam magni necessitatibus molestias sit adipisci eligendi, cupiditate aliquam maiores iusto, natus quam laboriosam veritatis quisquam ex voluptates ducimus vero recusandae.",
+      "price": 2232,
+      "image": "https://www.elgiganten.se/image/dv_web_D180001002713424/268768/hp-14s-dq0804no-14-barbar-dator.jpg?$digital220x220$"
+    },
+    {
+      "id": 2,
+      "name": "HP Pavillion",
+      "short": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, iste.",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ullam magni necessitatibus molestias sit adipisci eligendi, cupiditate aliquam maiores iusto, natus quam laboriosam veritatis quisquam ex voluptates ducimus vero recusandae.",
+      "price": 11242,
+      "image": "https://www.elgiganten.se/image/dv_web_D180001002705745/310838/hp-pavilion-tg01-1064no-stationar-dator-for-gaming.jpg?$digital220x220$"
+    },
+    {
+      "id": 3,
+      "name": "AOC Gamingskärm",
+      "short": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, iste.",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ullam magni necessitatibus molestias sit adipisci eligendi, cupiditate aliquam maiores iusto, natus quam laboriosam veritatis quisquam ex voluptates ducimus vero recusandae.",
+      "price": 2421,
+      "image": "https://www.elgiganten.se/image/dv_web_D180001002596860/266603/aoc-c32g2aebk-315-vaelvd-bildskaerm-foer-gaming.jpg?$digital220x220$"
+    },
+    {
+      "id": 4,
+      "name": "IPad Pro",
+      "short": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, iste.",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ullam magni necessitatibus molestias sit adipisci eligendi, cupiditate aliquam maiores iusto, natus quam laboriosam veritatis quisquam ex voluptates ducimus vero recusandae.",
+      "price": 8242,
+      "image": "https://www.elgiganten.se/image/dv_web_D180001002452526/165464/ipad-pro-129-2020-128-gb-wifi-rymdgra.jpg?$digital220x220$"
+    },
+    {
+      "id": 5,
+      "name": "Huawei P30 Pro",
+      "short": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam, iste.",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos ullam magni necessitatibus molestias sit adipisci eligendi, cupiditate aliquam maiores iusto, natus quam laboriosam veritatis quisquam ex voluptates ducimus vero recusandae.",
+      "price": 3596,
+      "image": "https://www.elgiganten.se/image/dv_web_D180001002209563/54154/huawei-p30-pro-smartphone-128-gb-svart.jpg?$digital220x220$"
+    }
+  ]
+}
