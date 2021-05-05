@@ -71,7 +71,9 @@
               </a>
               <!-- Dropdown menu -->
               <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                User settings
+                <li class="nav-item">
+                  <router-link class="nav-link text-dark" aria-current="page" to="/user">Settings</router-link>
+                </li>
               </ul>
             </li>
 
@@ -89,16 +91,20 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import ShoppingCart from './shoppingCart/ShoppingCart'
 export default {
   components: {
     ShoppingCart
   },
-  data() {
-    return {
-      loggedIn: false
-    }
+  computed: {
+    ...mapGetters(['loggedIn'])
   }
+  // data() {
+  //   return {
+  //     loggedIn: false
+  //   }
+  // }
 }
 </script>
 

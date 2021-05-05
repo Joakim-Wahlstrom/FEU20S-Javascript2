@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-5">
-    <form class="border p-5 col-6 mx-auto">
+    <form class="border p-5 col-6 mx-auto" @submit.prevent="onSub">
       <h4 class="text-center">Sign In</h4>
 
       <div class="form-outline mb-4">
@@ -23,11 +23,27 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   data() {
     return {
       email: '',
       password: ''
+    }
+  },
+  methods: {
+    ...mapActions(['login']),
+    onSub() {
+      if(this.email !== '' && this.password !== '') {
+        let user = {
+          email: this.email,
+          password: this.password
+        }
+        let route = this.$route.query.redirect
+
+        this.login({user, route})
+        // this.$router.push(this.$route.query.redirect)
+      }
     }
   }
 }
