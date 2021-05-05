@@ -53,8 +53,8 @@
                 <i class="fas fa-shopping-cart"></i>
               </a>
               <!-- Dropdown menu -->
-              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                Shopping Cart
+              <ul class="dropdown-menu dropdown-menu-end shopping-cart" aria-labelledby="navbarDropdown">
+                <ShoppingCart />
               </ul>
             </li>
 
@@ -89,7 +89,11 @@
 </template>
 
 <script>
+import ShoppingCart from './shoppingCart/ShoppingCart'
 export default {
+  components: {
+    ShoppingCart
+  },
   data() {
     return {
       loggedIn: false
@@ -98,6 +102,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  .shopping-cart {
+    min-width: 450px;
+  }
 </style>
