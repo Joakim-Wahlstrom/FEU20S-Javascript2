@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 // const auth = require('./authentication/auth');
-import axios from 'axios'
 
 const productController = require('./controllers/productController');
 const userController = require('./controllers/userController');
